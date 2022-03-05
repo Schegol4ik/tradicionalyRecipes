@@ -1,7 +1,7 @@
-import React, {useMemo} from 'react';
+import React, {useMemo, useState} from 'react';
 import './SearchPage.scss'
 import {RecipeType} from "../../types/Types";
-import {useParams} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 import Search from "../../component/Search/Search";
 import RecipeBlock from "../../component/RecipeBlock/RecipeBlock";
 
@@ -11,7 +11,10 @@ type Props = {
 
 const SearchPage = ({recipes}: Props) => {
 
+    const [valueInp, setValueInp] = useState<string>('')
+
     const params = useParams<'query'>()
+    const navigate = useNavigate()
 
     const findRecipe = useMemo(() => {
         return recipes.filter(item => item.name.toLowerCase().includes(`${params.query}`)
@@ -20,30 +23,37 @@ const SearchPage = ({recipes}: Props) => {
     }, [params.query])
 
 
+    const onSearch = () => {
+        if (!valueInp){
+            navigate('/search/search')
+        }else{navigate(`/search/${valueInp.toLowerCase()}`)}
+    }
+
     return (
         params.query === 'search'
             ? <div className='wrapper--search_page'>
-                <div>
-                    <Search/>
-                </div>
+                <h3>Введите название рецепта</h3>
+                <Search setValueInp={setValueInp} onSearch={onSearch} valueInp={valueInp}/>
             </div>
-            : <div>
+            : <div className='wrapper--search_page'>
                 {findRecipe.length
-                    ? <div>
-                        <Search/>
-                        <span>По вашему запросу найдено {findRecipe.length} рецептов</span>
+                    ? <div className='wrapper--search_page'>
+                        <h3>Введите название рецепта</h3>
+                        <Search setValueInp={setValueInp} onSearch={onSearch} valueInp={valueInp}/>
+                        <figure>По вашему запросу найдено {findRecipe.length} рецептов</figure>
                         {findRecipe.map(({
                                              name, cookingTime, aboutTheRecipes,
-                                             id, photoRecipe,foodType
+                                             id, photoRecipe, foodType
                                          }) =>
                             <RecipeBlock
                                 key={id} name={name} cookingTime={cookingTime} aboutTheRecipes={aboutTheRecipes}
                                 photoRecipe={photoRecipe} foodType={foodType}
                                 id={id}
                             />)}
-                </div>
-                    : <div>
-                        <Search/>
+                    </div>
+                    : <div className='wrapper--search_page'>
+                        <h3>По вашему запросу рецептов не найдено</h3>
+                        <Search setValueInp={setValueInp} onSearch={onSearch} valueInp={valueInp}/>
                     </div>
                 }
             </div>

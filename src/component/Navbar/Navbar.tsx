@@ -10,7 +10,11 @@ const Navbar = () => {
     const [valueInput, setValueInput] = useState<string>('')
 
     const onSearchRecipe = () => {
-        navigate(`/search/${valueInput.toLowerCase()}`)
+        if (!valueInput) {
+            navigate(`/search/search`)
+        } else {
+            navigate(`/search/${valueInput.toLowerCase()}`)
+        }
     }
 
     return (
