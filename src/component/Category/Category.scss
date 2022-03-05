@@ -1,0 +1,16 @@
+.wrapper--category{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  button{
+    font-size: 24px;
+    color: #4d4d4d;
+    margin-left: 5px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    outline: none;
+    &:active {
+      border-bottom: 1px solid #F35431;
+    }
+  }
+}

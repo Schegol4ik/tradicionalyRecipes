@@ -1,0 +1,216 @@
+.wrapper--aboutRecipe {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  max-width: 1100px;
+  margin-bottom: 50px;
+  padding-bottom: 20px;
+
+  img {
+    height: 500px;
+  }
+
+  .item__content {
+    display: flex;
+
+    .item__aboutRecipe {
+      min-width: 800px;
+      margin-left: 20px;
+      display: flex;
+      flex-direction: column;
+      color: #1F1F1F;
+      h1 {
+        color: #222222;
+      }
+
+      .item__ingredients {
+
+        margin-top: 50px;
+
+        .ingredients__title {
+          display: flex;
+          align-items: center;
+          margin-left: 40px;
+
+          h3 {
+            margin-left: 20px;
+          }
+        }
+
+        .ingredients__about {
+          display: flex;
+          margin-left: 20px;
+          .ingredients__name {
+            color: #1F1F1F;
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+          }
+
+          .ingredients__amount {
+            color: #1F1F1F;
+            margin-left: 200px;
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+          }
+        }
+      }
+
+      .item__steps{
+        margin-top: 50px;
+        .steps__title{
+          display: flex;
+          align-items: center;
+          margin-left: 40px;
+          h3 {
+            margin-left: 20px;
+          }
+          span{
+            margin-left: 30px;
+            color: #1F1F1F;
+          }
+        }
+        .steps__aboutSteps{
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          .steps__step{
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+
+            img {
+              width: 330px;
+              height: 200px;
+              border-radius: 10px;
+            }
+            span{
+            }
+            .steps__img{
+              display: flex;
+              align-items: center;
+              span{
+                padding-right: 5px;
+                font-size: 20px;
+                color: gray;
+              }
+            }
+            .steps__description{
+              margin-left: 15px;
+            }
+
+            &:hover{
+              .steps__img {
+                span{
+                  transition: 1s;
+                  color: #F35431;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .item__bonAppetit{
+        margin-top: 50px;
+        border-top: 1px solid lightgray;
+        border-bottom: 1px solid lightgray;
+        min-height: 40px;
+        max-width: 750px;
+        display: flex;
+        align-items: center;
+        span{
+          font-size: 18px;
+
+        }
+      }
+
+      .item__rating{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin-top: 50px;
+
+        .rating__stars{
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+
+      .wrapper--comments{
+        margin-left: 20px;
+        margin-top: 50px;
+        .item__showComments{
+          display: flex;
+          align-items: center;
+
+          .showComments__items{
+            margin-left: 30px;
+          }
+        }
+        .item__addComment{
+          margin-top: 50px;
+
+          .addComment__input{
+            margin-top: 40px;
+
+            button {
+              margin-top: 20px;
+              height: 30px;
+              background-color: #F35431;
+              color: white;
+              border-radius: 5px;
+              border: none;
+              cursor: pointer;
+
+              &:active {
+                border: 1px solid blue;
+              }
+            }
+
+            .addComment__upInput{
+              display: flex;
+              input {
+                width: 200px;
+                height: 25px;
+                outline: none;
+                &:focus{
+                  width: 200px;
+                  height: 25px;
+                  border: 1px solid #F35431;
+                }
+              }
+              .upInput__name{
+                display: flex;
+                flex-direction: column;
+              }
+              .upInput__email{
+                display: flex;
+                flex-direction: column;
+                margin-left: 20px;
+              }
+            }
+            .addComment__textarea{
+              display: flex;
+              flex-direction: column;
+              margin-top: 20px;
+              textarea{
+                width: 500px;
+                height: 200px;
+                outline: none;
+                &:focus{
+                  border: 1px solid #F35431;
+                }
+              }
+            }
+          }
+
+        }
+      }
+
+
+    }
+  }
+}

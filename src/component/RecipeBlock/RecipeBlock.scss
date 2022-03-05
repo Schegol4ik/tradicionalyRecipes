@@ -1,0 +1,40 @@
+.wrapper--recipeBlock {
+  display: flex;
+  margin-left: 40px;
+  margin-top: 20px;
+
+  img {
+    width: 330px;
+    height: 200px;
+    border-radius: 10px;
+  }
+
+  span {
+    color: #666;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+
+  .item__recipeBlock {
+    h4 {
+      cursor: pointer;
+      margin-bottom: 5px;
+      &:hover{
+        color: #F35431;
+      }
+    }
+    .item__info{
+      width: 290px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    margin-left: 40px;
+    width: 330px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+}

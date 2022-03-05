@@ -1,0 +1,31 @@
+.wrapper--navbar{
+  background-color: white;
+  max-width: 300px;
+  min-height: 100%;
+
+  .navbar__search{
+    display: flex;
+    align-items: center;
+    margin-right: 5px;
+    .search__icon{
+      font-size: 30px;
+      cursor: pointer;
+      margin-top: 23px;
+      margin-left: 3px;
+      &:active {
+        color: #F35431;
+      }
+    }
+    input {
+      margin-top: 20px;
+      width: 230px;
+      height: 25px;
+      outline: none;
+
+      &:focus {
+        border: 1px solid #F35431;
+      }
+    }
+  }
+
+}

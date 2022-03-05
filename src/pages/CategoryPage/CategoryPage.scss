@@ -1,0 +1,25 @@
+.wrapper--category_page {
+  display: flex;
+  background-color: #FDF0F0;
+  padding-bottom: 50px;
+
+  .category_page__item {
+    background-color: white;
+    margin-left: 150px;
+    padding-bottom: 30px;
+    .item__about {
+      margin-left: 20px;
+
+      max-width: 700px;
+      margin-bottom: 70px;
+      h1 {
+        color: #222222;
+      }
+
+      span {
+      }
+    }
+
+  }
+
+}

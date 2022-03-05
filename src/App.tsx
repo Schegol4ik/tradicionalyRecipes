@@ -1,26 +1,33 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
+import Main from "./pages/Main/Main";
+import Header from "./component/Header/Header";
+import Footer from "./component/Footer/Footer";
+import {useSelector} from "react-redux";
+import {RootState} from "./redux/redux-store";
+import Recipe from "./pages/Recipe/Recipe";
+import CategoryPage from "./pages/CategoryPage/CategoryPage";
+import SearchPage from "./pages/SearchPage/SearchPage";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+
+    const recipes = useSelector((state: RootState) => state.recipesReducer)
+
+
+    return (
+        <BrowserRouter>
+            <Header category={recipes.categories_menu}/>
+            <Routes>
+                <Route path='/' element={<Main recipes={recipes}/>}/>
+                <Route path='/recipe/:id' element={<Recipe recipes={recipes}/>}/>
+                <Route path='/category/:slug' element={<CategoryPage recipes={recipes.recipe}
+                                            category={recipes.categories_menu}
+                />}/>
+                <Route path='/search/:query' element={<SearchPage recipes={recipes.recipe} />}/>
+            </Routes>
+            <Footer/>
+        </BrowserRouter>
+    );
+};
 
 export default App;

@@ -1,0 +1,35 @@
+.wrapper--header{
+  min-height: 100px;
+  background-color: #EEEEEE;
+  padding-bottom: 11px;
+
+  .header__mainInf{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+  }
+
+  img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-left: 20px;
+
+    &:hover {
+      width: 81px;
+      height: 81px;
+    }
+  }
+  .item__icon{
+    color: #F35431;
+    font-size: 30px;
+    margin-right: 20px;
+    cursor: pointer;
+
+    &:hover {
+      color: #ffa100;
+    }
+  }
+}
