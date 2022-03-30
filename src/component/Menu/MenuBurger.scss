@@ -1,0 +1,9 @@
+.wrapper--menu_burger {
+  display: none;
+
+  @media screen and (max-width: 991px){
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+  }
+}

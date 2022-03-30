@@ -41,6 +41,8 @@ const Recipe = ({recipes}: Props) => {
             setRating(false)
         }
     }, [findRatings])
+    useEffect(() => {
+    },[])
 
     if (findRecipe && findComments && findRatings) {
 

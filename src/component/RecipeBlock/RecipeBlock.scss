@@ -1,12 +1,28 @@
 .wrapper--recipeBlock {
   display: flex;
-  margin-left: 40px;
-  margin-top: 20px;
+  margin-left: 100px;
+  margin-top: 30px;
+  position: relative;
+
+  @media (max-width: 775px) {
+    margin-left: 40px;
+  }
+  @media (max-width: 707px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0 5px;
+  }
 
   img {
     width: 330px;
     height: 200px;
     border-radius: 10px;
+    @media (max-width: 991px) {
+      width: 300px;
+      height: 170px;
+    }
   }
 
   span {
@@ -16,7 +32,22 @@
   }
 
   .item__recipeBlock {
+    position: relative;
+    top: 10px;
+
+    max-height: 190px;
+    margin-left: 40px;
+    width: 330px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    
+
+
     h4 {
+      font-size: 20px;
+      font-weight: 700;
       cursor: pointer;
       margin-bottom: 5px;
       &:hover{
@@ -30,11 +61,6 @@
       align-items: center;
     }
 
-    margin-left: 40px;
-    width: 330px;
-    height: 200px;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
+
   }
 }

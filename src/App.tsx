@@ -1,4 +1,5 @@
 import React from 'react';
+import './App.scss'
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import Main from "./pages/Main/Main";
 import Header from "./component/Header/Header";
@@ -8,6 +9,7 @@ import {RootState} from "./redux/redux-store";
 import Recipe from "./pages/Recipe/Recipe";
 import CategoryPage from "./pages/CategoryPage/CategoryPage";
 import SearchPage from "./pages/SearchPage/SearchPage";
+import AddRecipe from "./pages/AddRecipe/AddRecipe";
 
 const App = () => {
 
@@ -15,18 +17,21 @@ const App = () => {
 
 
     return (
-        <BrowserRouter>
-            <Header category={recipes.categories_menu}/>
-            <Routes>
-                <Route path='/' element={<Main recipes={recipes}/>}/>
-                <Route path='/recipe/:id' element={<Recipe recipes={recipes}/>}/>
-                <Route path='/category/:slug' element={<CategoryPage recipes={recipes.recipe}
-                                            category={recipes.categories_menu}
-                />}/>
-                <Route path='/search/:query' element={<SearchPage recipes={recipes.recipe} />}/>
-            </Routes>
-            <Footer/>
-        </BrowserRouter>
+        <div className='wrapper'>
+            <BrowserRouter>
+                <Header category={recipes.categories_menu}/>
+                <Routes>
+                    <Route path='/' element={<Main recipes={recipes}/>}/>
+                    <Route path='/recipe/:id' element={<Recipe recipes={recipes}/>}/>
+                    <Route path='/category/:slug' element={<CategoryPage recipes={recipes.recipe}
+                                                                         category={recipes.categories_menu}
+                    />}/>
+                    <Route path='/search/:query' element={<SearchPage recipes={recipes.recipe}/>}/>
+                    <Route path='/addRecipe' element={<AddRecipe/>}/>
+                </Routes>
+                <Footer/>
+            </BrowserRouter>
+        </div>
     );
 };
 

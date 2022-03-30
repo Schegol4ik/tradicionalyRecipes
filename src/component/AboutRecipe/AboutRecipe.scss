@@ -6,12 +6,21 @@
   margin-bottom: 50px;
   padding-bottom: 20px;
 
+
   img {
     height: 500px;
   }
 
   .item__content {
     display: flex;
+
+    .item__description {
+      h1 {
+        font-weight: 700;
+        font-size: 24px;
+        margin: 4px 0;
+      }
+    }
 
     .item__aboutRecipe {
       min-width: 800px;

@@ -1,16 +1,28 @@
-.wrapper--category{
+.wrapper--category {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
-  button{
+  border-top: 1px solid lightgrey;
+  border-bottom: 1px solid lightgrey;
+  padding: 5px 0 5px 0;
+
+
+  @media (max-width: 991px) {
+    display: none;
+  }
+
+  button {
+    background-color: white;
+    padding: 2px 1px;
+    margin: 0 auto;
+    font-weight: 700;
     font-size: 24px;
     color: #4d4d4d;
-    margin-left: 5px;
     cursor: pointer;
     border: 1px solid transparent;
     outline: none;
-    &:active {
-      border-bottom: 1px solid #F35431;
+
+    &:hover{
+      border-bottom: 1px solid #f35431 ;
     }
   }
 }
