@@ -11,7 +11,6 @@ const Main = ({recipes}: Props) => {
 
     return (
         <div className='wrapper--main'>
-            
             {recipes.recipe.map(({
                                      name, cookingTime, aboutTheRecipes,
                                      id, photoRecipe,foodType

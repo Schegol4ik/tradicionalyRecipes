@@ -5,18 +5,24 @@
   justify-content: center;
   position: relative;
   bottom: 65px;
+  left: 500px;
+  width: 200px;
+  padding: 0px 10px;
 
-  width: 100%;
-  @media screen and (max-width: 991px){
+  @media screen and (max-width: 991px) {
     position: relative;
     top: 30px;
-
+    left: 400px;
   }
-  @media screen and (max-width: 767px){
+  @media screen and (max-width: 767px) {
     position: relative;
+    left: 250px;
   }
-  @media screen and (max-width: 479px){
+  @media screen and (max-width: 565px){
+    left: 155px;
+  }
+  @media screen and (max-width: 479px) {
     position: relative;
-    right: 20px;
+    left: 90px;
   }
 }

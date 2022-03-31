@@ -12,6 +12,15 @@
       align-items: center;
       justify-content: space-between;
 
+      .main__burger{
+        display: none;
+        @media screen and (max-width: 991px){
+          display: flex;
+          flex-direction: column;
+          line-height: 1px;
+        }
+      }
+
       @media screen and (max-width: 991px){
         width: 100%;
         display: flex;
@@ -21,7 +30,7 @@
         display: flex;
         align-items: center;
         h1 {
-
+          cursor: pointer;
           font-weight: 700;
           font-size: 30px;
           padding: 0px 10px;
@@ -29,6 +38,7 @@
         }
 
         img {
+          cursor: pointer;
           width: 100px;
           border-radius: 50%;
         }

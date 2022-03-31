@@ -9,12 +9,17 @@ import {AiOutlineSearch} from "react-icons/ai";
 import Links from "../Links/Links";
 import {CategoryType} from "../../types/Types";
 import MenuBurger from "../Menu/MenuBurger";
+import { AiOutlineMenu } from "react-icons/ai";
+import { AiOutlineClose } from "react-icons/ai";
+
 
 type Props = {
     category: Array<CategoryType>
+    handleMenu: () => void
+    isMenu: boolean
 }
 
-const Header = ({category}: Props) => {
+const Header = ({category, handleMenu, isMenu}: Props) => {
 
     const navigate = useNavigate()
 
@@ -23,21 +28,28 @@ const Header = ({category}: Props) => {
         <div className='wrapper__header'>
             <div className='header__container'>
                 <div className='header__main'>
-                    <div className='main__logo'>
-                        <img src={logo} alt="logo" onClick={() => {
-                            navigate('/')
-                            console.log('click!')
-                        }}/>
+                    <div className='main__logo' onClick={() => {
+                        navigate('/tradicionalyRecipes')
+                    }}>
+                        <img src={logo} alt="logo"/>
                         <h1>РецептЫ</h1>
                     </div>
                     <div className='main__icons'>
                         <BiBookAdd className='item__icon' onClick={() => navigate('/addRecipe')}/>
                         <AiOutlineSearch onClick={() => navigate(`/search/search`)} className='item__icon'/>
                     </div>
-                    <MenuBurger/>
+                    <div className='main__burger'>
+                        {isMenu
+                            ? <AiOutlineClose size={20} onClick={() => handleMenu()}/>
+                            : <AiOutlineMenu onClick={() => handleMenu()} size={20}/>
+                        }
+                    </div>
                 </div>
                 <Links/>
                 <Category category={category}/>
+                <div>
+                    <MenuBurger isMenu={isMenu} handleMenu={handleMenu} category={category}/>
+                </div>
             </div>
         </div>
     );

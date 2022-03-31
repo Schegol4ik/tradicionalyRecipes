@@ -13,7 +13,7 @@ const Category = ({category}: Props) => {
 
     return (
         <nav className='wrapper--category'>
-            {category.map(({categories_name, slug}) => <button
+            {category.map(({categories_name, slug}) => <button key={slug}
                 onClick={() => navigate(`/category${slug}`)}>{categories_name}</button>)}
         </nav>
     );

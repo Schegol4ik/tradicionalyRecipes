@@ -5,16 +5,25 @@
   max-width: 1100px;
   margin-bottom: 50px;
   padding-bottom: 20px;
+  padding-left: 1px;
+  padding-right: 1px;
 
+  @media screen and (max-width: 575px){
+    max-width: 100%;
+  }
 
   img {
-    height: 500px;
+    max-height: 500px;
   }
 
   .item__content {
     display: flex;
-
+    flex-wrap: wrap;
     .item__description {
+      @media screen and (max-width: 479px){
+        max-width: 300px;
+      }
+      padding: 10px;
       h1 {
         font-weight: 700;
         font-size: 24px;
@@ -23,42 +32,49 @@
     }
 
     .item__aboutRecipe {
-      min-width: 800px;
+      max-width: 800px;
       margin-left: 20px;
       display: flex;
       flex-direction: column;
       color: #1F1F1F;
+
       h1 {
         color: #222222;
       }
 
       .item__ingredients {
-
-        margin-top: 50px;
-
+        padding-top: 50px;
+        display: flex;
+        flex-direction: column;
         .ingredients__title {
           display: flex;
           align-items: center;
           margin-left: 40px;
 
           h3 {
+            font-size: 18px;
+            font-weight: 700;
             margin-left: 20px;
           }
         }
 
         .ingredients__about {
           display: flex;
-          margin-left: 20px;
+          max-width: 400px;
+          justify-content: space-between;
+          font-size: 16px;
+          @media screen and (max-width: 479px){
+            max-width: 300px;
+          }
           .ingredients__name {
             color: #1F1F1F;
-            margin-top: 10px;
+            padding-top: 10px;
             display: flex;
             flex-direction: column;
           }
 
           .ingredients__amount {
             color: #1F1F1F;
-            margin-left: 200px;
             margin-top: 10px;
             display: flex;
             flex-direction: column;
@@ -66,52 +82,78 @@
         }
       }
 
-      .item__steps{
-        margin-top: 50px;
-        .steps__title{
+      .item__steps {
+        padding-top: 50px;
+
+        .steps__title {
           display: flex;
           align-items: center;
           margin-left: 40px;
+
           h3 {
+            font-weight: 700;
+            font-size: 18px;
             margin-left: 20px;
           }
-          span{
+
+          span {
             margin-left: 30px;
             color: #1F1F1F;
           }
         }
-        .steps__aboutSteps{
+
+        .steps__aboutSteps {
+          position: relative;
           display: flex;
           flex-direction: column;
           justify-content: center;
-          .steps__step{
+          padding-right: 5px;
+
+
+          .steps__step {
             display: flex;
             align-items: center;
             margin-top: 20px;
-
+            @media screen and (max-width: 768px) {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: flex-start;
+            }
+            @media screen and (max-width: 479px){
+              max-width: 300px;
+            }
             img {
-              width: 330px;
-              height: 200px;
+              @media screen and (max-width: 479px){
+                max-width: 250px;
+              }
+              max-width: 330px;
+              max-height: 200px;
               border-radius: 10px;
             }
-            span{
-            }
-            .steps__img{
+
+            .steps__img {
               display: flex;
               align-items: center;
-              span{
+
+              span {
                 padding-right: 5px;
                 font-size: 20px;
                 color: gray;
               }
             }
-            .steps__description{
+
+            .steps__description {
               margin-left: 15px;
+              @media screen and (max-width: 768px) {
+                margin-top: 10px;
+                max-width: 330px;
+              }
             }
 
-            &:hover{
+            &:hover {
               .steps__img {
-                span{
+                span {
                   transition: 1s;
                   color: #F35431;
                 }
@@ -121,50 +163,79 @@
         }
       }
 
-      .item__bonAppetit{
+      .item__bonAppetit {
         margin-top: 50px;
         border-top: 1px solid lightgray;
         border-bottom: 1px solid lightgray;
         min-height: 40px;
         max-width: 750px;
         display: flex;
+        flex-wrap: wrap;
         align-items: center;
-        span{
+        @media screen and (max-width: 479px){
+          max-width: 300px;
+        }
+        span {
           font-size: 18px;
 
         }
       }
 
-      .item__rating{
+      .item__rating {
         display: flex;
         align-items: center;
         justify-content: space-around;
         margin-top: 50px;
-
-        .rating__stars{
+        @media screen and (max-width: 479px){
+          display: flex;
+          flex-direction: column;
+          max-width: 300px;
+        }
+        .rating__stars {
           display: flex;
           flex-direction: column;
           align-items: center;
         }
       }
 
-      .wrapper--comments{
+      .wrapper--comments {
         margin-left: 20px;
         margin-top: 50px;
-        .item__showComments{
+
+        h3{
+          font-weight: 700;
+          font-size: 18px ;
+        }
+
+        .item__showComments {
           display: flex;
           align-items: center;
+          padding-top: 10px;
 
-          .showComments__items{
+          .showComments__items {
+            h4 {
+              font-size: 16px;
+              font-weight: 600;
+              margin-bottom: 3px;
+            }
             margin-left: 30px;
           }
         }
-        .item__addComment{
+
+        .item__addComment {
           margin-top: 50px;
+          @media screen and (max-width: 479px){
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+          }
 
-          .addComment__input{
+          .addComment__input {
             margin-top: 40px;
-
+            @media screen and (max-width: 479px){
+              display: flex;
+              flex-direction: column;
+            }
             button {
               margin-top: 20px;
               height: 30px;
@@ -173,43 +244,60 @@
               border-radius: 5px;
               border: none;
               cursor: pointer;
+              padding: 5px;
 
               &:active {
                 border: 1px solid blue;
               }
             }
 
-            .addComment__upInput{
+            .addComment__upInput {
               display: flex;
+              @media screen and (max-width: 479px){
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+              }
               input {
-                width: 200px;
+                max-width: 200px;
                 height: 25px;
                 outline: none;
-                &:focus{
-                  width: 200px;
+                border: 1px solid lightgrey;
+
+                &:focus {
+                  max-width: 200px;
                   height: 25px;
                   border: 1px solid #F35431;
                 }
               }
-              .upInput__name{
+
+              .upInput__name {
                 display: flex;
                 flex-direction: column;
               }
-              .upInput__email{
+
+              .upInput__email {
                 display: flex;
                 flex-direction: column;
                 margin-left: 20px;
+                @media screen and (max-width: 479px){
+                  margin: 10px 0;
+                }
               }
             }
-            .addComment__textarea{
+
+            .addComment__textarea {
               display: flex;
               flex-direction: column;
               margin-top: 20px;
-              textarea{
-                width: 500px;
+
+              textarea {
+                border: 1px solid lightgrey;
+                max-width: 500px;
                 height: 200px;
                 outline: none;
-                &:focus{
+
+                &:focus {
                   border: 1px solid #F35431;
                 }
               }

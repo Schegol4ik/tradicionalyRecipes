@@ -3,6 +3,10 @@
   max-width: 300px;
   min-height: 100%;
 
+  @media screen and (max-width: 991px){
+    display: none;
+  }
+
   .navbar__search{
     display: flex;
     align-items: center;
@@ -21,6 +25,7 @@
       width: 230px;
       height: 25px;
       outline: none;
+      border: 1px solid lightgrey;
 
       &:focus {
         border: 1px solid #F35431;

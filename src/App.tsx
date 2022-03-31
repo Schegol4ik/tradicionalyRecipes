@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.scss'
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import Main from "./pages/Main/Main";
@@ -14,14 +14,19 @@ import AddRecipe from "./pages/AddRecipe/AddRecipe";
 const App = () => {
 
     const recipes = useSelector((state: RootState) => state.recipesReducer)
+    const [isMenu, setIsMenu] = useState<boolean>(false)
+
+    const handleMenu = () => {
+        setIsMenu(prev => !prev)
+    }
 
 
     return (
         <div className='wrapper'>
             <BrowserRouter>
-                <Header category={recipes.categories_menu}/>
+                <Header category={recipes.categories_menu} handleMenu={handleMenu} isMenu={isMenu}/>
                 <Routes>
-                    <Route path='/' element={<Main recipes={recipes}/>}/>
+                    <Route path='/tradicionalyRecipes' element={<Main recipes={recipes}/>}/>
                     <Route path='/recipe/:id' element={<Recipe recipes={recipes}/>}/>
                     <Route path='/category/:slug' element={<CategoryPage recipes={recipes.recipe}
                                                                          category={recipes.categories_menu}
