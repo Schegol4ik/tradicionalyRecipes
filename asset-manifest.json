@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/tradicionalyRecipes/static/css/main.7e87b153.css",
-    "main.js": "/tradicionalyRecipes/static/js/main.928a2baf.js",
+    "main.css": "/tradicionalyRecipes/static/css/main.b384c6ad.css",
+    "main.js": "/tradicionalyRecipes/static/js/main.ead1ef35.js",
     "static/js/787.76be111f.chunk.js": "/tradicionalyRecipes/static/js/787.76be111f.chunk.js",
     "static/media/bstep_2.jpg": "/tradicionalyRecipes/static/media/bstep_2.974814aac28cee6fcefc.jpg",
     "static/media/ksalads_1.jpg": "/tradicionalyRecipes/static/media/ksalads_1.55e4bb89aa3ef3631ddb.jpg",
@@ -30,12 +30,12 @@
     "static/media/recipes_lavash.jpg": "/tradicionalyRecipes/static/media/recipes_lavash.5f0c637da5e0dc80c843.jpg",
     "static/media/myLogo.png": "/tradicionalyRecipes/static/media/myLogo.fec4511d5f6243261d1e.png",
     "index.html": "/tradicionalyRecipes/index.html",
-    "main.7e87b153.css.map": "/tradicionalyRecipes/static/css/main.7e87b153.css.map",
-    "main.928a2baf.js.map": "/tradicionalyRecipes/static/js/main.928a2baf.js.map",
+    "main.b384c6ad.css.map": "/tradicionalyRecipes/static/css/main.b384c6ad.css.map",
+    "main.ead1ef35.js.map": "/tradicionalyRecipes/static/js/main.ead1ef35.js.map",
     "787.76be111f.chunk.js.map": "/tradicionalyRecipes/static/js/787.76be111f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7e87b153.css",
-    "static/js/main.928a2baf.js"
+    "static/css/main.b384c6ad.css",
+    "static/js/main.ead1ef35.js"
   ]
 }
